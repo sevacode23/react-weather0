@@ -4,11 +4,7 @@ import { Image } from "../../image";
 
 const Styles = {
   Root: styled.div`
-    background-color: #05336b;
     padding: 11px;
-    color: white;
-  `,
-  ContentContainer: styled.div`
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -23,6 +19,7 @@ const Styles = {
       }
     }
   `,
+
   TitleContainer: styled.div`
     display: flex;
     align-items: center;
@@ -132,40 +129,38 @@ const Styles = {
 export const Top = () => {
   return (
     <Styles.Root>
-      <Styles.ContentContainer>
-        <Styles.TitleContainer>
-          <Styles.Rectangle>
-            <div>
-              The
-              <br />
-              Weather
-              <br />
-              Channel
-            </div>
-          </Styles.Rectangle>
-          <Styles.Title>
-            An <b>IBM</b> Business
-          </Styles.Title>
-        </Styles.TitleContainer>
+      <Styles.TitleContainer>
+        <Styles.Rectangle>
+          <div>
+            The
+            <br />
+            Weather
+            <br />
+            Channel
+          </div>
+        </Styles.Rectangle>
+        <Styles.Title>
+          An <b>IBM</b> Business
+        </Styles.Title>
+      </Styles.TitleContainer>
 
-        <Styles.InputContainer>
-          <Styles.Input type="text" placeholder="Search City or Zip Code" />
-          <Styles.SearchIcon file="search" width="20px" />
-        </Styles.InputContainer>
+      <Styles.InputContainer>
+        <Styles.Input type="text" placeholder="Search City or Zip Code" />
+        <Styles.SearchIcon file="search" width="20px" />
+      </Styles.InputContainer>
 
-        <Styles.ButtonsContainer>
-          <Styles.IconsButton>
-            <Image file="earth" width="24px" height="24px" />
-            <span>US | °F</span>
-            <Styles.Triangle />
-          </Styles.IconsButton>
-          <Styles.BurgerButton>
-            <div></div>
-            <div></div>
-            <div></div>
-          </Styles.BurgerButton>
-        </Styles.ButtonsContainer>
-      </Styles.ContentContainer>
+      <Styles.ButtonsContainer>
+        <Styles.IconsButton>
+          <Image file="earth" width="24px" height="24px" />
+          <span>US | °F</span>
+          <Styles.Triangle />
+        </Styles.IconsButton>
+        <Styles.BurgerButton>
+          <div></div>
+          <div></div>
+          <div></div>
+        </Styles.BurgerButton>
+      </Styles.ButtonsContainer>
     </Styles.Root>
   );
 };
