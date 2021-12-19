@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { Triangle } from "../../ui";
+import { DropMenu } from "./drop-menu";
 
 const Styles = {
   Root: styled.div`
@@ -30,14 +31,6 @@ const Styles = {
       }
     }
   `,
-  DropDownLi: styled.li`
-    display: flex;
-    align-items: center;
-    border-bottom: none !important;
-  `,
-  LiTriangle: styled(Triangle)`
-    margin-left: 8px;
-  `,
 };
 
 export const Bottom = () => (
@@ -51,9 +44,7 @@ export const Bottom = () => (
         <li>Monthly</li>
         <li>Radar</li>
         <li>Video</li>
-        <Styles.DropDownLi>
-          More Forecast <Styles.LiTriangle />
-        </Styles.DropDownLi>
+        <DropMenu />
       </Styles.List>
     </Styles.NavCentered>
   </Styles.Root>
