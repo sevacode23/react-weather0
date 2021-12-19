@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { Image } from "../../image";
+import { Triangle } from "../../ui";
 
 const Styles = {
   Root: styled.div`
@@ -102,13 +103,6 @@ const Styles = {
     top: 50%;
     transform: translateY(-50%);
   `,
-  Triangle: styled.i`
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid white;
-  `,
   BurgerButton: styled.button`
     background-color: transparent;
     width: 30px;
@@ -153,7 +147,7 @@ export const Top = () => {
         <Styles.IconsButton>
           <Image file="earth" width="24px" height="24px" />
           <span>US | °F</span>
-          <Styles.Triangle />
+          <Triangle />
         </Styles.IconsButton>
         <Styles.BurgerButton>
           <div></div>

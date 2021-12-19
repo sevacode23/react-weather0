@@ -4,7 +4,6 @@ import { Top, Middle, Bottom } from "./components";
 
 const Styles = {
   Root: styled.header`
-    background-color: #05336b;
     color: white;
   `,
 };
