@@ -5,7 +5,7 @@ interface INews {
   imgUrl: string;
 }
 
-export const newsContent: INews[] = [
+export const NEWS_CONTENT: INews[] = [
   {
     title: "University of Michigan Flu Outbreak Brings CDC to Campus",
     description:
