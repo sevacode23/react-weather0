@@ -24,6 +24,7 @@ const Styles = {
 const IMAGE_MAP = {
   search: require("../assets/icons/search.svg"),
   earth: require("../assets/icons/earth.svg"),
+  play: require("../assets/icons/play.svg"),
 };
 
 interface IProps extends ISizeParams {

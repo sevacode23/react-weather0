@@ -1,9 +1,11 @@
 import styled from "styled-components";
+
 import { newsContent } from "../../constants";
+import { Image } from "../image";
 
 const Styles = {
   Root: styled.main`
-    width: 85%;
+    width: 84%;
     max-width: 1280px;
     display: flex;
     margin: 0 auto;
@@ -15,7 +17,7 @@ const Styles = {
       background-color: white;
     }
   `,
-  SectionHeader: styled.h3`
+  SectionHead: styled.h3`
     font-size: 20px;
   `,
   NewsSection: styled.section`
@@ -28,12 +30,25 @@ const Styles = {
   NewsItem: styled.li`
     max-height: 130px;
     display: flex;
-
     margin-top: 32px;
+    cursor: pointer;
+
+    &:hover .news-head {
+      color: blue;
+    }
   `,
   NewsImageContainer: styled.div`
     width: 150px;
     flex-shrink: 0;
+  `,
+  ImageRelativeContainer: styled.div`
+    position: relative;
+  `,
+  PlayIcon: styled(Image)`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   `,
   NewsContent: styled.div`
     margin-left: 12px;
@@ -49,20 +64,46 @@ const Styles = {
     overflow: hidden;
     text-overflow: ellipsis;
   `,
+  ButtonsContainer: styled.div`
+    margin-top: 20px;
+    padding-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #dee0e3;
+
+    & > button {
+      background: none;
+      outline: none;
+      border: none;
+      font-size: 16px;
+    }
+  `,
+  PrevButton: styled.button`
+    color: grey;
+  `,
+  NextButton: styled.button`
+    color: blue;
+    cursor: pointer;
+  `,
 };
 
 export const Main = () => (
   <Styles.Root>
     <Styles.NewsSection>
-      <Styles.SectionHeader>All Stories and Videos</Styles.SectionHeader>
+      <Styles.SectionHead>All Stories and Videos</Styles.SectionHead>
       <ul>
         {newsContent.map((news) => (
           <Styles.NewsItem>
             <Styles.NewsImageContainer>
-              <img src={news.imgUrl} alt="img" />
+              <Styles.ImageRelativeContainer>
+                <img src={news.imgUrl} alt="img" />
+                {news.description && (
+                  <Styles.PlayIcon file="play" width="32px" height="32px" />
+                )}
+              </Styles.ImageRelativeContainer>
             </Styles.NewsImageContainer>
             <Styles.NewsContent>
-              <h4>{news.title}</h4>
+              <h4 className="news-head">{news.title}</h4>
               <Styles.NewsTime dateTime={news.date.toLocaleString()}>
                 {news.date.toLocaleDateString()}
               </Styles.NewsTime>
@@ -73,14 +114,14 @@ export const Main = () => (
           </Styles.NewsItem>
         ))}
       </ul>
-      <div>
-        <button>Previous</button>
-        <button>Next</button>
-      </div>
+      <Styles.ButtonsContainer>
+        <Styles.PrevButton disabled>{"< Previous"}</Styles.PrevButton>
+        <Styles.NextButton>{"Next >"}</Styles.NextButton>
+      </Styles.ButtonsContainer>
     </Styles.NewsSection>
 
     <Styles.AdSection>
-      <Styles.SectionHeader>Sponsored Content</Styles.SectionHeader>
+      <Styles.SectionHead>Sponsored Content</Styles.SectionHead>
       <div></div>
       <i>by Taboola Sponsored links</i>
     </Styles.AdSection>
