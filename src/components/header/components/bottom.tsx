@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-import { Triangle } from "../../ui";
 import { DropMenu } from "./drop-menu";
 
 const Styles = {
