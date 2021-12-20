@@ -94,6 +94,13 @@ const Styles = {
     padding: 16px;
     border-radius: 6px;
   `,
+  AdContainer: styled.div`
+    cursor: pointer;
+
+    &:hover b {
+      text-decoration: underline;
+    }
+  `,
   AdTitle: styled.b`
     font-weight: normal;
   `,
@@ -150,11 +157,11 @@ export const Main = () => (
         <Styles.SectionHead>Sponsored Content</Styles.SectionHead>
         <Styles.AdsContainer>
           {ADS.map((ad, index) => (
-            <div key={index}>
+            <Styles.AdContainer key={index}>
               <img src={ad.imgUrl} alt="ad" />
               <Styles.AdTitle>{ad.title}</Styles.AdTitle>
               <Styles.Advertiser>{ad.advertiser}</Styles.Advertiser>
-            </div>
+            </Styles.AdContainer>
           ))}
         </Styles.AdsContainer>
         <Styles.AdTip>by Taboola Sponsored links</Styles.AdTip>

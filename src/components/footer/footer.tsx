@@ -103,8 +103,12 @@ const Styles = {
     justify-content: center;
     align-items: center;
 
-    > * + * {
-      margin-left: 12px;
+    > div {
+      cursor: pointer;
+
+      &:not(:first-child) {
+        margin-left: 12px;
+      }
     }
   `,
   DataRights: styled.b`
