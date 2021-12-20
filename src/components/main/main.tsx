@@ -117,8 +117,8 @@ export const Main = () => (
     <Styles.NewsSection>
       <Styles.SectionHead>All Stories and Videos</Styles.SectionHead>
       <ul>
-        {NEWS_CONTENT.map((news) => (
-          <Styles.NewsItem>
+        {NEWS_CONTENT.map((news, index) => (
+          <Styles.NewsItem key={index}>
             <Styles.NewsImageContainer>
               <Styles.ImageRelativeContainer>
                 <img src={news.imgUrl} alt="img" />
@@ -149,8 +149,8 @@ export const Main = () => (
       <Styles.AdsHeightContainer>
         <Styles.SectionHead>Sponsored Content</Styles.SectionHead>
         <Styles.AdsContainer>
-          {ADS.map((ad) => (
-            <div>
+          {ADS.map((ad, index) => (
+            <div key={index}>
               <img src={ad.imgUrl} alt="ad" />
               <Styles.AdTitle>{ad.title}</Styles.AdTitle>
               <Styles.Advertiser>{ad.advertiser}</Styles.Advertiser>

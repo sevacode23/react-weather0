@@ -25,6 +25,15 @@ const IMAGE_MAP = {
   search: require("../assets/icons/search.svg"),
   earth: require("../assets/icons/earth.svg"),
   play: require("../assets/icons/play.svg"),
+  youtube: require("../assets/icons/youtube.svg"),
+  instagram: require("../assets/icons/instagram.svg"),
+  twitter: require("../assets/icons/twitter.svg"),
+  facebook: require("../assets/icons/facebook.svg"),
+  weatherCompany: require("../assets/icons/weather-company.svg"),
+  weatherChannel: require("../assets/icons/weather-channel.svg"),
+  wu: require("../assets/icons/wu.svg"),
+  georgia: require("../assets/icons/georgia.svg"),
+  disabled: require("../assets/icons/disabled.svg"),
 };
 
 interface IProps extends ISizeParams {

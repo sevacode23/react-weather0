@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Header, Main } from "./components";
+import { Footer, Header, Main } from "./components";
 
 const Root = styled.div`
   background-color: #05336b;
@@ -12,6 +12,7 @@ function App() {
     <Root>
       <Header />
       <Main />
+      <Footer />
     </Root>
   );
 }
